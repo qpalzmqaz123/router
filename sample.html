@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf8" />
+<script type="text/javascript" src = "./router.js"></script>
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<a href = "#!index">go to index</a><br />
+	<a href = "#!search/word/date/desc">go to search</a>
+</body>
+
+<script type="text/javascript">
+window.onload = function() {
+	var router = new Router();
+
+	router.add('index', function() {
+		alert('current page: index');
+	});
+
+
+	router.add('search', function(wd, sortType, sortBy) {
+		alert('current page: search' + '\nwd: ' + wd + '\nsortType: ' + sortType + '\nsortBy: ' + sortBy);
+	});
+
+	router.setIndex('index');
+	router.start();
+};
+</script>
+</html>
