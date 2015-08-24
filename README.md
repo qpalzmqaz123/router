@@ -1,9 +1,11 @@
 # router
 小型的前端路由
+http://lvpro.wpblog.jp/?p=304
 
-# 用法
+### 用法
 具体可以参考sample.html
-映入router.js文件之后，首先需要实例化Router对象
+
+引入router.js文件之后，首先需要实例化Router对象
 ```javascript
 var router = new Router();
 ```
@@ -24,7 +26,7 @@ router.start();
 
 这样，访问/#!index之后，回调函数会被调用
 
-# 带有参数的情况
+### 带有参数的情况
 ```javascript
 router.add('search', function(wd, sortType, sortBy) {
 	alert('current page: search' + '\nwd: ' + wd + '\nsortType: ' + sortType + '\nsortBy: ' + sortBy);
@@ -32,7 +34,7 @@ router.add('search', function(wd, sortType, sortBy) {
 ```
 对于上述路由，若访问/#!search/word/date/desc, 其中的word,date,desc会分别赋值给回调函数中的wd,sortType,sortBy三个参数
 
-# api
+### api
 add(addr, callback): 添加路由,注意多次添加同样的addr，只有最后一次添加的有效，所以用add也能用于修改路由
 
 remove(addr): 删除路由
