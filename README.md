@@ -33,9 +33,14 @@ router.add('search', function(wd, sortType, sortBy) {
 对于上述路由，若访问/#!search/word/date/desc, 其中的word,date,desc会分别赋值给回调函数中的wd,sortType,sortBy三个参数
 
 # api
-add(addr, callback): 添加路由,注意多次添加同样的addr，则只有最后一次添加的有效
+add(addr, callback): 添加路由,注意多次添加同样的addr，只有最后一次添加的有效，所以用add也能用于修改路由
+
 remove(addr): 删除路由
+
 setIndex(index): 设置首页
+
 go(addr): 跳转到某地址, 如go('index/page/100');
+
 reload(): 重新载入，会根据当前地址重新调用回调函数
+
 start(): 提供此函数是为了即使直接访问路由地址仍然能成功调用回调函数
